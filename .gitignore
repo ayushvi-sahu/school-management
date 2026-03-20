@@ -37,3 +37,13 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore sensitive file
+application.properties
+
+# Ignore build files
+target/
+
+# Ignore IDE files
+.idea/
+*.iml
