@@ -1,0 +1,31 @@
+package com.school.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.List;
+
+@Getter
+@Setter
+@Entity
+public class ClassRoom {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int classId;
+
+    private String standard;
+    private String section;
+
+    @ManyToOne
+    private School school;
+
+    @OneToOne
+    private Teacher teacher;
+
+    @OneToOne
+    private Subject subject;
+
+    @OneToMany(mappedBy = "classRoom")
+    private List<Student> students;
+}
