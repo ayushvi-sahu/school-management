@@ -22,6 +22,10 @@ public class Student {
     private String address;
 
     @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
+
+    @ManyToOne
     @JoinColumn(name = "classroom_id")
     private ClassRoom classRoom;
 

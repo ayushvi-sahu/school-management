@@ -20,11 +20,11 @@ public class ClassRoom {
     @ManyToOne
     private School school;
 
-    @OneToOne
-    private Teacher teacher;
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    private List<Subject> subjects;
 
-    @OneToOne
-    private Subject subject;
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    private List<Teacher> teachers;
 
     @OneToMany(mappedBy = "classRoom")
     private List<Student> students;

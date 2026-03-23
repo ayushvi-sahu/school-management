@@ -16,6 +16,10 @@ public class Subject {
     private String subjectName;
 
     @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
+
+    @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 

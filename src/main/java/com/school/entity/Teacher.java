@@ -22,6 +22,10 @@ public class Teacher {
     @JoinColumn(name = "school_id")
     private School school;
 
+    @ManyToOne
+    @JoinColumn(name = "classroom_id")
+    private ClassRoom classRoom;
+
     @OneToMany(mappedBy = "teacher")
     private List<Subject> subjects;
 }

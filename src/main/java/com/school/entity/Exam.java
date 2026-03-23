@@ -17,6 +17,10 @@ public class Exam {
     private String examType;
     private String examDate;
 
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
+
     // Many students can appear in many exams
     @ManyToMany(mappedBy = "exams")
     private List<Student> students;

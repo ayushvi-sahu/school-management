@@ -23,4 +23,13 @@ public class School {
 
    // @OneToMany(mappedBy = "school")
    // private List<Teacher> teachers;
+   @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
+   private List<Student> students;
+
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Teacher> teachers;
+
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ClassRoom> classRooms;
+
 }
