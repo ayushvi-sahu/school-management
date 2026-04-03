@@ -1,19 +1,25 @@
-package com.school.service;
+package com.school.service.impl;
 
 import com.school.entity.School;
 import com.school.model.SchoolModel;
 import com.school.repository.SchoolRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.school.service.SchoolDetailsService;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class SchoolService {
+@Getter
+public class SchoolDetailsServiceImp implements SchoolDetailsService {
 
-    @Autowired
-    private SchoolRepo schoolRepo;
+    private final SchoolRepo schoolRepo;
 
+    public SchoolDetailsServiceImp(SchoolRepo schoolRepo) {
+        this.schoolRepo = schoolRepo;
+    }
+
+    @Override
     public School saveSchool(SchoolModel model) {
 
         School school = new School();
@@ -22,10 +28,11 @@ public class SchoolService {
         school.setAddress(model.getAddress());
         school.setPhoneNumber(model.getPhoneNumber());
 
-        return schoolRepo.save(school);
+        return getSchoolRepo().save(school);
     }
 
+    @Override
     public List<School> getAllSchools() {
-        return schoolRepo.findAll();
+        return getSchoolRepo().findAll();
     }
 }
