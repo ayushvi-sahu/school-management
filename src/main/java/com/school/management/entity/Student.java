@@ -15,7 +15,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studentId;
-
+    private String className;
     private String dateOfBirth;
     private String studentName;
     private String rollNumber;
