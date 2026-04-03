@@ -1,6 +1,6 @@
-package com.school.repository;
+package com.school.management.repository;
 
-import com.school.entity.ClassRoom;
+import com.school.management.entity.ClassRoom;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClassRoomRepo extends JpaRepository<ClassRoom, Integer> {
