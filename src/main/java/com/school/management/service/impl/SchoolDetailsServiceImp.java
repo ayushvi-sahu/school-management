@@ -1,9 +1,9 @@
-package com.school.service.impl;
+package com.school.management.service.impl;
 
-import com.school.entity.School;
-import com.school.model.SchoolModel;
-import com.school.repository.SchoolRepo;
-import com.school.service.SchoolDetailsService;
+import com.school.management.entity.School;
+import com.school.management.model.SchoolModel;
+import com.school.management.repository.SchoolRepo;
+import com.school.management.service.SchoolDetailsService;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

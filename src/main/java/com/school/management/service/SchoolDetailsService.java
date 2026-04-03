@@ -1,7 +1,7 @@
-package com.school.service;
+package com.school.management.service;
 
-import com.school.entity.School;
-import com.school.model.SchoolModel;
+import com.school.management.entity.School;
+import com.school.management.model.SchoolModel;
 
 import java.util.List;
 

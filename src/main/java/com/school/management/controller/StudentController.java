@@ -1,9 +1,9 @@
-package com.school.controller;
+package com.school.management.controller;
 
-import com.school.model.StudentModel;
-import com.school.entity.Student;
-import com.school.service.StudentDetailsService;
-import com.school.service.impl.StudentDetailsServiceImpl;
+import com.school.management.model.StudentModel;
+import com.school.management.entity.Student;
+import com.school.management.service.StudentDetailsService;
+import com.school.management.service.impl.StudentDetailsServiceImpl;
 import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 

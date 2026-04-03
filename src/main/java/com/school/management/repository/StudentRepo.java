@@ -1,6 +1,6 @@
-package com.school.repository;
+package com.school.management.repository;
 
-import com.school.entity.Student;
+import com.school.management.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentRepo extends JpaRepository<Student, Integer> {

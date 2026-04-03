@@ -1,4 +1,4 @@
-package com.school.entity;
+package com.school.management.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
