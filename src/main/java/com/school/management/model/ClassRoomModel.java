@@ -1,4 +1,4 @@
-package com.school.model;
+package com.school.management.model;
 
 import lombok.Getter;
 import lombok.Setter;
