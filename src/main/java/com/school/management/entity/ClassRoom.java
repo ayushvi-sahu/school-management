@@ -18,14 +18,15 @@ public class ClassRoom {
     private String section;
 
     @ManyToOne
+    @JoinColumn(name = "school_id")
     private School school;
 
-    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Subject> subjects;
 
-    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Teacher> teachers;
 
-    @OneToMany(mappedBy = "classRoom")
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Student> students;
 }

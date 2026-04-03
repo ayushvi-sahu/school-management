@@ -26,6 +26,11 @@ public class Teacher {
     @JoinColumn(name = "classroom_id")
     private ClassRoom classRoom;
 
-    @OneToMany(mappedBy = "teacher")
+    @ManyToMany
+    @JoinTable(
+            name = "teacher_subject",
+            joinColumns = @JoinColumn(name = "teacher_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id")
+    )
     private List<Subject> subjects;
 }

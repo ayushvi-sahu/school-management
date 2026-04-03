@@ -16,13 +16,12 @@ public class Result {
     private int marks;
     private String grade;
 
-    // Many results belong to one student
+
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "student_id", nullable = false)
     private Student student;
 
-    // Many results belong to one exam
     @ManyToOne
-    @JoinColumn(name = "exam_id")
+    @JoinColumn(name = "exam_id", nullable = false)
     private Exam exam;
 }

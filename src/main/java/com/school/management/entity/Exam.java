@@ -26,6 +26,6 @@ public class Exam {
     private List<Student> students;
 
     // One exam can have many results
-    @OneToMany(mappedBy = "exam")
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Result> results;
 }

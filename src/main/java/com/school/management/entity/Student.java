@@ -1,8 +1,10 @@
 package com.school.management.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,20 +19,22 @@ public class Student {
     private String dateOfBirth;
     private String studentName;
     private String rollNumber;
-    private String className;
     private String section;
     private String address;
 
     @ManyToOne
     @JoinColumn(name = "school_id")
+    @JsonIgnoreProperties({"students", "teachers", "classRooms"})
     private School school;
 
     @ManyToOne
     @JoinColumn(name = "classroom_id")
+    @JsonIgnoreProperties({"students", "teachers", "subjects", "school"})
     private ClassRoom classRoom;
 
-    @OneToMany(mappedBy = "student")
-    private java.util.List<Result> results;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Result> results;
 
     @ManyToMany
     @JoinTable(
@@ -38,6 +42,9 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "exam_id")
     )
-    private java.util.List<Exam> exams;
+    private List<Exam> exams;
 }
+
+
+
 
