@@ -18,6 +18,7 @@ public class Student {
     private String className;
     private String dateOfBirth;
     private String studentName;
+    private String className;
     private String rollNumber;
     private String section;
     private String address;

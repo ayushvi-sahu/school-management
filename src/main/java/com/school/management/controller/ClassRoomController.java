@@ -2,6 +2,7 @@ package com.school.management.controller;
 
 import com.school.management.entity.ClassRoom;
 import com.school.management.service.ClassRoomService;
+import com.school.management.service.ClassRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
